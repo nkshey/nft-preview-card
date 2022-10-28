@@ -45,16 +45,18 @@ body {
   margin-bottom: 16px;
 }
 
+.details {
+  display: flex;
+  justify-content: space-between;
+}
+
 .price {
   color: #00fff8;
   font-weight: 600;
   font-size: 15px;
   line-height: 19px;
-  display: inline-flex;
-}
-
-.price > img {
-  margin-right: 6.5px;
+  display: flex;
+  align-items: center;
 }
 
 .time {
@@ -62,11 +64,12 @@ body {
   font-weight: 400;
   font-size: 15px;
   line-height: 19px;
-  display: inline-flex;
-  float: right;
+  display: flex;
+  align-items: center;
 }
 
-.time > img {
+.icon-clock,
+.icon-ethereum {
   margin-right: 6.5px;
 }
 
