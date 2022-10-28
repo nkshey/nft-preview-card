@@ -15,11 +15,11 @@ body {
   height: 100vh;
 }
 
-.container {
+.main-container {
   background-color: #15263f;
   box-shadow: 0px 25px 50px rgba(0, 0, 0, 0.0952917);
-  width: 350px;
-  height: 596px;
+  width: 327px;
+  height: auto;
   border-radius: 15px;
   padding: 24px;
 }
@@ -29,134 +29,186 @@ body {
   border-radius: 8px;
 }
 
-/* Every paragraph's color */
-p {
-  color: #8bacd9;
-}
-
-/* Adding transparent overlay when hovering on the image */
-.overlay-div {
-  position: relative;
-  width: 100%;
-  max-width: 400px;
-}
-
-.blue-box {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 302px;
-  width: 302px;
-  border-radius: 8px;
-  background-color: #00fff8;
-  opacity: 0;
-  transition: 0.3s ease;
-}
-
-.view-icon {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  color: white;
-  opacity: 0;
-  transition: 0.3s ease;
-}
-
-.overlay-div:hover .blue-box {
-  opacity: 0.5;
-  cursor: pointer;
-}
-
-.overlay-div:hover .view-icon {
-  opacity: 1;
-  cursor: pointer;
-}
-
-/* Styling the title and the description */
-.title-desc > h1 {
+.title {
   color: #ffffff;
+  font-weight: 600;
   font-size: 22px;
-  font-weight: 600;
-  margin-top: 24px;
-  display: inline-block;
+  line-height: 28px;
+  margin: 24px 0 12px 0;
 }
 
-.title-desc > p {
-  font-size: 18px;
+.description {
+  color: #8bacd9;
   font-weight: 300;
-  margin-top: 16px;
+  font-size: 18px;
+  line-height: 26px;
+  margin-bottom: 16px;
 }
 
-.title-desc > h1:hover {
-  cursor: pointer;
+.price {
   color: #00fff8;
-}
-
-/* Styling the ETH and time */
-.price-time > h2 {
-  color: #00fff8;
-  font-size: 16px;
   font-weight: 600;
-  padding-top: 24px;
+  font-size: 15px;
+  line-height: 19px;
+  display: inline-flex;
 }
 
-.price-time > p {
-  font-size: 16px;
+.price > img {
+  margin-right: 6.5px;
+}
+
+.time {
+  color: #8bacd9;
   font-weight: 400;
-  margin-top: 24px;
+  font-size: 15px;
+  line-height: 19px;
+  display: inline-flex;
   float: right;
 }
 
-.price-time > h2::before {
-  content: url(images/icon-ethereum.svg);
-  vertical-align: middle;
-  padding-right: 6.5px;
+.time > img {
+  margin-right: 6.5px;
 }
 
-.price-time > p::before {
-  content: url(images/icon-clock.svg);
-  vertical-align: middle;
-  padding-right: 6.5px;
+.rectangle {
+  background-color: #2e405a;
+  width: 278px;
+  height: 1px;
+  margin: 16px 0 16px 0;
 }
 
-/* Styling the author */
 .creator-div {
-  margin-top: 32px;
+  display: flex;
+  align-items: center;
+}
+
+.avatar {
+  width: 33px;
+  border: 1px solid #ffffff;
+  border-radius: 50%;
 }
 
 .creation-of {
   color: #8bacd9;
-  font-size: 16px;
   font-weight: 400;
-  padding-left: 16px;
+  font-size: 15px;
+  line-height: 19px;
+  margin: 0 5px 0 16px;
 }
 
 .author-name {
   color: #ffffff;
-  font-size: 16px;
   font-weight: 400;
+  font-size: 15px;
+  line-height: 19px;
 }
 
-.author-name:hover {
-  cursor: pointer;
-  color: #00fff8;
+.overlay-div {
+  display: none;
 }
 
-.avatar {
-  border: 1px solid #ffffff;
-  border-radius: 50%;
-  width: 33px;
-}
+@media screen and (min-width: 481px) {
+  .main-container {
+    width: 350px;
+  }
 
-/* Miscellaneous */
-.rectangle {
-  background-color: #2e405a;
-  height: 1px;
-  width: 302px;
-  margin-top: 24px;
-  margin-bottom: -16px;
+  .title {
+    margin-bottom: 16px;
+    display: inline-block;
+  }
+
+  .title:hover {
+    cursor: pointer;
+    color: #00fff8;
+  }
+
+  .description {
+    margin-bottom: 24px;
+  }
+
+  .price {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .time {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .rectangle {
+    width: 302px;
+    margin-top: 24px;
+  }
+
+  .creation-of {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .author-name {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .author-name:hover {
+    cursor: pointer;
+    color: #00fff8;
+  }
+
+  .creator-div {
+    margin-bottom: 8px;
+  }
+
+  .main-image-desktop {
+    max-width: 100%;
+    border-radius: 8px;
+  }
+
+  /* Adding transparent overlay when hovering on the image */
+  .main-image {
+    display: none;
+  }
+
+  .overlay-div {
+    display: revert;
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .blue-box {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 302px;
+    width: 302px;
+    border-radius: 8px;
+    background-color: #00fff8;
+    opacity: 0;
+    transition: 0.3s ease;
+  }
+
+  .view-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    color: white;
+    opacity: 0;
+    transition: 0.3s ease;
+  }
+
+  .overlay-div:hover .blue-box {
+    opacity: 0.5;
+    cursor: pointer;
+  }
+
+  .overlay-div:hover .view-icon {
+    opacity: 1;
+    cursor: pointer;
+  }
 }
