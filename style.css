@@ -1,217 +1,197 @@
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap");
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+*,
+*::before,
+*::after {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+   font-family: "Outfit", sans-serif;
+}
+
+:root {
+   /* PRIMARY */
+   --soft-blue: hsl(215, 51%, 70%);
+   --cyan: hsl(178, 100%, 50%);
+
+   /* NEUTRAL */
+   --very-dark-blue: hsl(217, 54%, 11%);
+   --dark-blue: hsl(216, 50%, 16%);
+   --blue: hsl(215, 32%, 27%);
+   --white: hsl(0, 0%, 100%);
+}
+
+html {
+   font-size: 62.5%;
 }
 
 body {
-  background-color: #0d192c;
-  font-family: "Outfit";
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+   font-size: 1.6rem;
+   background-color: var(--very-dark-blue);
+   color: var(--soft-blue);
+
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100dvh;
 }
 
-.main-container {
-  background-color: #15263f;
-  box-shadow: 0px 25px 50px rgba(0, 0, 0, 0.0952917);
-  width: 327px;
-  height: auto;
-  border-radius: 15px;
-  padding: 24px;
+main {
+   width: 32.7rem;
+   padding: 2.4rem;
+   border-radius: 1.6rem;
+   background-color: var(--dark-blue);
 }
 
-.main-image {
-  max-width: 100%;
-  border-radius: 8px;
+.img-container {
+   position: relative;
 }
 
-.title {
-  color: #ffffff;
-  font-weight: 600;
-  font-size: 22px;
-  line-height: 28px;
-  margin: 24px 0 12px 0;
+.img-equilibrium {
+   display: block;
+   width: 100%;
+   height: 100%;
+   border-radius: 0.8rem;
 }
 
-.description {
-  color: #8bacd9;
-  font-weight: 300;
-  font-size: 18px;
-  line-height: 26px;
-  margin-bottom: 16px;
+.icon-bg {
+   opacity: 0;
+   cursor: pointer;
+
+   width: 100%;
+   height: 100%;
+
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   background-color: hsl(178, 100%, 50%, 0.5);
+   border-radius: 0.8rem;
+
+   transition: all 0.3s;
 }
 
-.details {
-  display: flex;
-  justify-content: space-between;
+.img-container:hover .icon-bg {
+   opacity: 1;
 }
 
-.price {
-  color: #00fff8;
-  font-weight: 600;
-  font-size: 15px;
-  line-height: 19px;
-  display: flex;
-  align-items: center;
+.section-info h1 {
+   display: inline-block;
+   font-size: 2.2rem;
+   color: var(--white);
+
+   margin-bottom: 1.2rem;
+   margin-top: 2.4rem;
+
+   transition: all 0.3s;
 }
 
-.time {
-  color: #8bacd9;
-  font-weight: 400;
-  font-size: 15px;
-  line-height: 19px;
-  display: flex;
-  align-items: center;
+.section-info h1:hover,
+.section-info h1:active {
+   cursor: pointer;
+   color: var(--cyan);
 }
 
-.icon-clock,
-.icon-ethereum {
-  margin-right: 6.5px;
+.section-info > p {
+   font-size: 1.8rem;
+   font-weight: 300;
+   line-height: 2.6rem;
+
+   margin-bottom: 1.6rem;
 }
 
-.rectangle {
-  background-color: #2e405a;
-  width: 278px;
-  height: 1px;
-  margin: 16px 0 16px 0;
+.price-container {
+   display: flex;
+   justify-content: space-between;
+
+   margin-bottom: 1.6rem;
 }
 
-.creator-div {
-  display: flex;
-  align-items: center;
+.price-container > div {
+   display: flex;
+}
+
+.eth-div p {
+   font-size: 1.5rem;
+   font-weight: 600;
+   color: var(--cyan);
+   margin-left: 0.65rem;
+}
+
+.clock-div p {
+   font-size: 1.5rem;
+   margin-left: 0.65rem;
+}
+
+hr {
+   border: none;
+   height: 1px;
+   width: 100%;
+   background-color: var(--blue);
+
+   margin-bottom: 1.6rem;
+}
+
+.section-author {
+   display: flex;
+   align-items: center;
+   font-size: 1.5rem;
+   font-weight: 400;
+
+   gap: 1.6rem;
+}
+
+.section-author a {
+   text-decoration: none;
+   color: var(--white);
+
+   margin-left: 0.5rem;
+
+   transition: all 0.3s;
+}
+
+.section-author a:hover,
+.section-author a:active {
+   color: var(--cyan);
 }
 
 .avatar {
-  width: 33px;
-  border: 1px solid #ffffff;
-  border-radius: 50%;
+   width: 3.3rem;
+   border: 1px solid var(--white);
+   border-radius: 50%;
 }
 
-.creation-of {
-  color: #8bacd9;
-  font-weight: 400;
-  font-size: 15px;
-  line-height: 19px;
-  margin: 0 5px 0 16px;
-}
+/* Making it responsive for Desktop devices */
+@media (min-width: 1440px) {
+   main {
+      width: 35rem;
+   }
 
-.author-name {
-  color: #ffffff;
-  font-weight: 400;
-  font-size: 15px;
-  line-height: 19px;
-}
+   .section-info h1 {
+      margin-bottom: 1.6rem;
+   }
 
-.overlay-div {
-  display: none;
-}
+   .section-info > p {
+      margin-bottom: 2.4rem;
+   }
 
-@media screen and (min-width: 481px) {
-  .main-container {
-    width: 350px;
-  }
+   .price-container p {
+      font-size: 1.6rem;
+   }
 
-  .title {
-    margin-bottom: 16px;
-    display: inline-block;
-  }
+   .price-container {
+      margin-bottom: 2.4rem;
+   }
 
-  .title:hover {
-    cursor: pointer;
-    color: #00fff8;
-  }
+   .section-author p {
+      font-size: 1.6rem;
+   }
 
-  .description {
-    margin-bottom: 24px;
-  }
-
-  .price {
-    font-size: 16px;
-    line-height: 20px;
-  }
-
-  .time {
-    font-size: 16px;
-    line-height: 20px;
-  }
-
-  .rectangle {
-    width: 302px;
-    margin-top: 24px;
-  }
-
-  .creation-of {
-    font-size: 16px;
-    line-height: 20px;
-  }
-
-  .author-name {
-    font-size: 16px;
-    line-height: 20px;
-  }
-
-  .author-name:hover {
-    cursor: pointer;
-    color: #00fff8;
-  }
-
-  .creator-div {
-    margin-bottom: 8px;
-  }
-
-  .main-image-desktop {
-    max-width: 100%;
-    border-radius: 8px;
-  }
-
-  /* Adding transparent overlay when hovering on the image */
-  .main-image {
-    display: none;
-  }
-
-  .overlay-div {
-    display: revert;
-    position: relative;
-    width: 100%;
-    max-width: 400px;
-  }
-
-  .blue-box {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 302px;
-    width: 302px;
-    border-radius: 8px;
-    background-color: #00fff8;
-    opacity: 0;
-    transition: 0.3s ease;
-  }
-
-  .view-icon {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    color: white;
-    opacity: 0;
-    transition: 0.3s ease;
-  }
-
-  .overlay-div:hover .blue-box {
-    opacity: 0.5;
-    cursor: pointer;
-  }
-
-  .overlay-div:hover .view-icon {
-    opacity: 1;
-    cursor: pointer;
-  }
+   .section-author {
+      margin-bottom: 0.8rem;
+   }
 }
